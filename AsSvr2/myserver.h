@@ -13,12 +13,18 @@ public:
     explicit MyServer(QObject *parent = 0);
 
     void StartServer();
+    void setConnectCount(uint count);
 protected:
     void incomingConnection(int Hnadle);
 
 signals:
 
 public slots:
+    void slot_disconnected();
+
+private:
+    QList<MyClient*> MyClientList;
+    uint m_ConnectCount;
 
 };
 

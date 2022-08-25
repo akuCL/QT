@@ -17,6 +17,7 @@ void MyClient::SetSocket(int Descriptor)
     qDebug() << "client connected";
 }
 
+
 void MyClient::connected()
 {
     qDebug() << "client connected event";
@@ -25,6 +26,7 @@ void MyClient::connected()
 void MyClient::disconnected()
 {
     qDebug() << "client disconnected";
+    emit sig_disconnected();
 }
 
 void MyClient::readyRead()
@@ -33,7 +35,6 @@ void MyClient::readyRead()
 
     MyTask * mytask = new MyTask();
     mytask->setAutoDelete(true);
-    //connect(mytask,SIGNAL(Result(int)),this,SLOT(TaskResult(int)),Qt::DirectConnection);
     connect(mytask,SIGNAL(Result(int)),this,SLOT(TaskResult(int)));
     QThreadPool::globalInstance()->start(mytask);
 }
@@ -45,4 +46,5 @@ void MyClient::TaskResult(int Number)
     Buffer.append(QString::number(Number));
 
     socket->write(Buffer);
+    qDebug() << "TaskResult : " << socket;
 }

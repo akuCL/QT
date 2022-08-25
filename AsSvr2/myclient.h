@@ -14,6 +14,7 @@ public:
     explicit MyClient(QObject *parent = nullptr);
     void SetSocket(int Descriptor);
 signals:
+    void sig_disconnected();
 
 public slots:
     void connected();
