@@ -1,0 +1,18 @@
+<RCC>
+    <qresource prefix="/new/prefix1">
+        <file>image/Back.png</file>
+        <file>image/Circle.png</file>
+        <file>image/Clear.png</file>
+        <file>image/ScreenShots.png</file>
+        <file>image/Square.png</file>
+        <file>image/Suspend.png</file>
+        <file>image/Trace.png</file>
+        <file>image/Triangle.png</file>
+        <file>image/AddSpeed.png</file>
+        <file>image/SubSpeed.png</file>
+        <file>image/stop.png</file>
+        <file>image/Reverse .png</file>
+        <file>image/Begin.png</file>
+        <file>image/Like.png</file>
+    </qresource>
+</RCC>
